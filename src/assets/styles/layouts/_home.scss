@@ -52,7 +52,7 @@ h3, legend {
     font-size: $text-xl;
 }
 
-a[class^="nav-link"].active, a[class^="nav-link"]:hover {
+.active, a[class^="nav-link"]:hover {
     color: $font-blockquote-color;
 }
 
