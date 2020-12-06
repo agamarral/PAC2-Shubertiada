@@ -1,254 +1,167 @@
 <!DOCTYPE html>
 
 <html>
-  <include
-    src="snippets/head.html"
-    locals='{
-        "description": "Pàgina principal"
-    }'
-  ></include>
+<include src="snippets/head.html" locals='{
+        "description": "Reserva d entrades per a la Shubertíada de Vilamajor"
+    }'></include>
 
-  <body>
-    <include
-      src="snippets/header.html"
-      locals='{
+<body>
+    <include src="snippets/header.html" locals='{
         "artist_active": "",
         "history_active": "",
         "booking_active":"active"
-    }'
-    ></include>
+    }'></include>
 
     <form class="bg-light">
-      <h1 class="text-center">Reserva d'entrades</h1>
-      <fieldset class="flex-fieldset">
-        <legend>Dades personals</legend>
+        <h1 class="text-center">Reserva d'entrades</h1>
+        <fieldset class="flex-fieldset">
+            <legend>Dades personals</legend>
 
-        <div id="field-1" class="mb-5 mr-3">
-          <label for="name">Nom*:</label><br />
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value=""
-            autofocus
-            required
-          />
-        </div>
-        <div id="field-2" class="mb-5 mr-3">
-          <label for="surname">Cognoms*:</label><br />
-          <input type="text" name="surname" id="surname" value="" required />
-        </div>
-        <div id="field-3" class="mb-5 mr-3">
-          <label for="email">Correu electrònic*:</label><br />
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="pericodelospalotes@miemail.cat"
-            required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-          />
-        </div>
-        <div id="field-4" class="mb-5 mr-3">
-          <include
-            src="snippets/countrycode.html"
-            locals='{
+            <div id="field-1" class="mb-5 mr-3">
+                <label for="name">Nom*:</label><br />
+                <input type="text" name="name" id="name" value="" autofocus required />
+            </div>
+            <div id="field-2" class="mb-5 mr-3">
+                <label for="surname">Cognoms*:</label><br />
+                <input type="text" name="surname" id="surname" value="" required />
+            </div>
+            <div id="field-3" class="mb-5 mr-3">
+                <label for="email">Correu electrònic*:</label><br />
+                <input type="text" name="email" id="email" placeholder="pericodelospalotes@miemail.cat" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+            </div>
+            <div id="field-4" class="mb-5 mr-3">
+                <include src="snippets/countrycode.html" locals='{
                     "fieldid": "countryCode"
-                }'
-          ></include>
-        </div>
-        <div id="field-5" class="mb-5 mr-3">
-          <label for="telnumber">Telèfon*:</label><br />
-          <input
-            type="tel"
-            name="telnumber"
-            id="telnumber"
-            placeholder="666112233"
-            required
-            pattern="[0-9 ]{9,13}"
-          />
-        </div>
-      </fieldset>
+                }'></include>
+            </div>
+            <div id="field-5" class="mb-5 mr-3">
+                <label for="telnumber">Telèfon*:</label><br />
+                <input type="tel" name="telnumber" id="telnumber" placeholder="666112233" required
+                    pattern="[0-9 ]{9,13}" />
+            </div>
+        </fieldset>
 
-      <fieldset class="flex-fieldset">
-        <legend>Selecció d'entrades</legend>
-        <div class="book-container">
-          <div class="ml-5 mt-2 mb-2">
-            <div class="h6">Die Schöne Müllerin</div>
-            <div class="font-weight-light font-smaller">
-              <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Divendres 25
-              Juny 2021, 20h30
-            </div>
+        <fieldset class="flex-fieldset">
+            <legend>Selecció d'entrades</legend>
+            <div class="book-container">
+                <div class="ml-5 mt-2 mb-2">
+                    <div class="h6">Die Schöne Müllerin</div>
+                    <div class="font-weight-light font-smaller">
+                        <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Divendres 25
+                        Juny 2021, 20h30
+                    </div>
 
-            <div class="ml-3 mt-1 small font-italic font-weight-bolder">
-              Andrè Schuen, baríton <br />
-              Daniel Heide, piano
+                    <div class="ml-3 mt-1 small font-italic font-weight-bolder">
+                        Andrè Schuen, baríton <br />
+                        Daniel Heide, piano
+                    </div>
+                </div>
+                <div class="d-flex flex-column w-auto m-2 mr-5">
+                    <label class="pt-1 small font-weight-light">quantes entrades vols?</label>
+                    <input id="field-6" class="w-25 align-self-center small" type="number" id="quantity" name="quantity"
+                        min="1" max="10" />
+                </div>
             </div>
-          </div>
-          <div class="d-flex flex-column w-auto m-2 mr-5">
-            <label class="pt-1 small font-weight-light"
-              >quantes entrades vols?</label
-            >
-            <input
-              id="field-6"
-              class="w-25 align-self-center small"
-              type="number"
-              id="quantity"
-              name="quantity"
-              min="1"
-              max="10"
-            />
-          </div>
-        </div>
-        <div class="book-container">
-          <div class="ml-5 mt-2 mb-2">
-            <div class="h6">Die Winterreise</div>
-            <div class="font-weight-light font-smaller">
-              <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Dissabte 26
-              Juny 2021, 20h30
-            </div>
+            <div class="book-container">
+                <div class="ml-5 mt-2 mb-2">
+                    <div class="h6">Die Winterreise</div>
+                    <div class="font-weight-light font-smaller">
+                        <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Dissabte 26
+                        Juny 2021, 20h30
+                    </div>
 
-            <div class="ml-3 mt-1 small font-italic font-weight-bolder">
-              Joyce DiDonato, mezzo soprano
+                    <div class="ml-3 mt-1 small font-italic font-weight-bolder">
+                        Joyce DiDonato, mezzo soprano
+                    </div>
+                </div>
+                <div class="d-flex flex-column w-auto m-2 mr-5">
+                    <label class="pt-1 small font-weight-light">quantes entrades vols?</label>
+                    <input class="w-25 align-self-center small" type="number" id="quantity" name="quantity" min="1"
+                        max="10" />
+                </div>
             </div>
-          </div>
-          <div class="d-flex flex-column w-auto m-2 mr-5">
-            <label class="pt-1 small font-weight-light"
-              >quantes entrades vols?</label
-            >
-            <input
-              class="w-25 align-self-center small"
-              type="number"
-              id="quantity"
-              name="quantity"
-              min="1"
-              max="10"
-            />
-          </div>
-        </div>
-        <div class="book-container">
-          <div class="ml-5 mt-2 mb-2">
-            <div class="h6">Lieder</div>
-            <div class="font-weight-light font-smaller">
-              <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Diumenge 27
-              Juny 2021, 20h30
-            </div>
+            <div class="book-container">
+                <div class="ml-5 mt-2 mb-2">
+                    <div class="h6">Lieder</div>
+                    <div class="font-weight-light font-smaller">
+                        <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Diumenge 27
+                        Juny 2021, 20h30
+                    </div>
 
-            <div class="ml-3 mt-1 small font-italic font-weight-bolder">
-              Matthias Görne, baríton
+                    <div class="ml-3 mt-1 small font-italic font-weight-bolder">
+                        Matthias Görne, baríton
+                    </div>
+                </div>
+                <div class="d-flex flex-column w-auto m-2 mr-5">
+                    <label class="pt-1 small font-weight-light">quantes entrades vols?</label>
+                    <input id="field-8" class="w-25 align-self-center small" type="number" id="quantity" name="quantity"
+                        min="1" max="10" />
+                </div>
             </div>
-          </div>
-          <div class="d-flex flex-column w-auto m-2 mr-5">
-            <label class="pt-1 small font-weight-light"
-              >quantes entrades vols?</label
-            >
-            <input
-              id="field-8"
-              class="w-25 align-self-center small"
-              type="number"
-              id="quantity"
-              name="quantity"
-              min="1"
-              max="10"
-            />
-          </div>
-        </div>
-        <div class="book-container">
-          <div class="ml-5 mt-2 mb-2">
-            <div class="h6">Quartet italià</div>
-            <div class="font-weight-light font-smaller">
-              <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Divendres 2
-              Juliol 2021, 20h30
-            </div>
+            <div class="book-container">
+                <div class="ml-5 mt-2 mb-2">
+                    <div class="h6">Quartet italià</div>
+                    <div class="font-weight-light font-smaller">
+                        <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Divendres 2
+                        Juliol 2021, 20h30
+                    </div>
 
-            <div class="ml-3 mt-1 small font-italic font-weight-bolder">
-              Quartet Casals
+                    <div class="ml-3 mt-1 small font-italic font-weight-bolder">
+                        Quartet Casals
+                    </div>
+                </div>
+                <div class="d-flex flex-column w-auto m-2 mr-5">
+                    <label class="pt-1 small font-weight-light">quantes entrades vols?</label>
+                    <input id="field-8" class="w-25 align-self-center small" type="number" id="quantity" name="quantity"
+                        min="1" max="10" />
+                </div>
             </div>
-          </div>
-          <div class="d-flex flex-column w-auto m-2 mr-5">
-            <label class="pt-1 small font-weight-light"
-              >quantes entrades vols?</label
-            >
-            <input
-              id="field-8"
-              class="w-25 align-self-center small"
-              type="number"
-              id="quantity"
-              name="quantity"
-              min="1"
-              max="10"
-            />
-          </div>
-        </div>
-        <div class="book-container">
-          <div class="ml-5 mt-2 mb-2">
-            <div class="h6">Stabat Mater</div>
-            <div class="font-weight-light font-smaller">
-              <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Dissabte 3
-              Juliol 2021, 20h30
-            </div>
+            <div class="book-container">
+                <div class="ml-5 mt-2 mb-2">
+                    <div class="h6">Stabat Mater</div>
+                    <div class="font-weight-light font-smaller">
+                        <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Dissabte 3
+                        Juliol 2021, 20h30
+                    </div>
 
-            <div class="ml-3 mt-1 small font-italic font-weight-bolder">
-              Orfeó català
+                    <div class="ml-3 mt-1 small font-italic font-weight-bolder">
+                        Orfeó català
+                    </div>
+                </div>
+                <div class="d-flex flex-column w-auto m-2 mr-5">
+                    <label class="pt-1 small font-weight-light">quantes entrades vols?</label>
+                    <input id="field-8" class="w-25 align-self-center small" type="number" id="quantity" name="quantity"
+                        min="1" max="10" />
+                </div>
             </div>
-          </div>
-          <div class="d-flex flex-column w-auto m-2 mr-5">
-            <label class="pt-1 small font-weight-light"
-              >quantes entrades vols?</label
-            >
-            <input
-              id="field-8"
-              class="w-25 align-self-center small"
-              type="number"
-              id="quantity"
-              name="quantity"
-              min="1"
-              max="10"
-            />
-          </div>
-        </div>
-        <div class="book-container">
-          <div class="ml-5 mt-2 mb-2">
-            <div class="h6">Der Töd und das Mädchen</div>
-            <div class="font-weight-light font-smaller">
-              <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Diumenge 4
-              Juliol 2021, 20h30
-            </div>
+            <div class="book-container">
+                <div class="ml-5 mt-2 mb-2">
+                    <div class="h6">Der Töd und das Mädchen</div>
+                    <div class="font-weight-light font-smaller">
+                        <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Diumenge 4
+                        Juliol 2021, 20h30
+                    </div>
 
-            <div class="ml-3 mt-1 small font-italic font-weight-bolder">
-              Quartet Casals
+                    <div class="ml-3 mt-1 small font-italic font-weight-bolder">
+                        Quartet Casals
+                    </div>
+                </div>
+                <div class="d-flex flex-column w-auto m-2 mr-5">
+                    <label class="pt-1 small font-weight-light">quantes entrades vols?</label>
+                    <input id="field-8" class="w-25 align-self-center small" type="number" id="quantity" name="quantity"
+                        min="1" max="10" />
+                </div>
             </div>
-          </div>
-          <div class="d-flex flex-column w-auto m-2 mr-5">
-            <label class="pt-1 small font-weight-light"
-              >quantes entrades vols?</label
-            >
-            <input
-              id="field-8"
-              class="w-25 align-self-center small"
-              type="number"
-              id="quantity"
-              name="quantity"
-              min="1"
-              max="10"
-            />
-          </div>
-        </div>
-      </fieldset>
-      <fieldset class="flex-fieldset mt-10">
-        <input
-          type="checkbox"
-          class="mr-3"
-          required
-          id="terms"
-          name="terms"
-        /><label for="terms" class="mr-3"
-          >He llegit i accepto la política de privacitat i l'avís legal *</label
-        ><br />
-        <button id="btn_send" type="submit">Envia</button>
-      </fieldset>
+        </fieldset>
+        <fieldset class="flex-fieldset mt-10">
+            <input type="checkbox" class="mr-3" required id="terms" name="terms" /><label for="terms" class="mr-3">He
+                llegit i accepto la política de privacitat i l'avís legal *</label><br />
+            <button id="btn_send" type="submit">Envia</button>
+        </fieldset>
     </form>
 
     <include src="snippets/footer.html" locals="{}"></include>
-  </body>
+</body>
+
 </html>

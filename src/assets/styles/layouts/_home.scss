@@ -41,6 +41,7 @@ h3, legend {
     @extend %nav-link-text-abstract;
 }
 
+
 .nav-link-small-text {
     @extend %nav-link-text-abstract;
     font-size: $text-l;
@@ -51,8 +52,8 @@ h3, legend {
     font-size: $text-xl;
 }
 
-.nav-link:hover,.nav-link.active {
-    color: $font-heading-color;
+a[class^="nav-link"].active, a[class^="nav-link"]:hover {
+    color: $font-blockquote-color;
 }
 
 

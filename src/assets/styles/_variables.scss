@@ -47,7 +47,7 @@ $colors: ("border-color-red": #d13c08, "str-bg-color-red": #ed1c24, "med-bg-colo
 }
 
 
-@include set-color-set("blue");
+@include set-color-set("green");
 
 $border-style: 1px solid $border-color;
 $thick-border-style: 4px dotted $border-color;
@@ -58,8 +58,6 @@ $text-l: 16px;
 $text-m: 14px;
 $text-s: 12px;
 
-
-@mixin border-box-style {
-    border: $border-style;
-    border-radius: 25px;
-}
+$theme-colors: (
+  "info": $font-blockquote-color
+);
