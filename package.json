@@ -8,7 +8,7 @@
     "parcel:dev": "parcel src/index.html -p 8123 --open",
     "parcel:build": "parcel build src/index.html --public-url ./ --out-dir dist --no-source-maps --no-cache",
     "prettier:fix": "prettier --write src/*.html",
-    "prerelease": "git add src/assets/styles/layouts/*.scss src/assets/styles/*.{scss,json}  *.html package.json",
+    "prerelease": "git add src/assets/styles/layouts/*.scss src/assets/styles/*.scss  *.html package.json",
     "clean": "rimraf dist .cache .cache-loader",
     "check": "npx stylelint \"src/assets/styles/**/*.scss\"",
     "dev": "npm-run-all clean parcel:dev",
