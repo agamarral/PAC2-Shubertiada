@@ -21,6 +21,14 @@ aside {
     display: flex;
     flex-direction: row!important;
     justify-content: space-between;
+
+    .navbar-nav { 
+        flex-direction: row!important;
+
+        .nav-item {
+            margin-right: 15px;
+        }
+    }
 }
 
 .footer {
