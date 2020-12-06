@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<include src="snippets/head.html" locals='{
+        "description": "Pàgina principal"
+    }'></include>
+
+<body>
+
+    <include src="snippets/header.html" locals='{
+        "artist_active": "",
+        "history_active": "",
+        "booking_active":""
+    }'></include>
+
+
+    <div class="bg-light pb-5">
+        <div class="front-page-container">
+            <div class="box-1">
+                <i class="fa fa-calendar"></i>
+                <p>del 25 de Juny al <br> 4 de Juliol de 2021</p>
+            </div>
+            <div class="box-2">
+                <i class="fa fa-map-marker"></i>
+                <p>Plaça de l'esglèsia <br> Sant Pere de Vilamajor</p>
+            </div>
+            <div class="box-3">
+                <i class="fa fa-ticket" aria-hidden="true"></i>
+                <p>Venda d'entrades<br> a l'ajuntament de <br>Sant Pere de Vilamajor</p>
+            </div>
+            <div class="box-4">
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <p>Servei de bar <br> a la mitja part</p>
+            </div>
+        </div>
+    </div>
+    <include src="snippets/footer.html" locals='{}'></include>
+</body>
+
+</html>

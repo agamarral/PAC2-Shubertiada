@@ -1,0 +1,65 @@
+@use "sass:map";
+
+$border-color: global 0;
+$str-bg-color: global 0;
+$med-bg-color: global 0;
+$light-bg-color: global 0;
+$font-control-color: global 0;
+$font-blockquote-color: global 0;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif: "Baskerville", "Georgia", serif;
+$font-family: "Courier Prime", monospace;
+
+
+$font-current-color: #787878;
+$font-heading-color: #484848;
+$font-auxiliary-color: #c8c8c8;
+$main-bg-color: #f1f1f1;
+$sidebar-bg-color: #787878;
+$font-blockquote-color: #eb966c;
+
+
+$colors: ("border-color-red": #d13c08, "str-bg-color-red": #ed1c24, "med-bg-color-red": #fe2d35, "light-bg-color-red": #f66b7c, "font-control-color-red": #f5b2a6, "font-blockquote-color-red": #ff6347,
+"border-color-blue": #00008b, "str-bg-color-blue": #483d8b, "med-bg-color-blue": #6a5acd, "light-bg-color-blue": #7b68ee, "font-control-color-blue": #7997f1, "font-blockquote-color-blue": #4169e1,
+"border-color-green": #008000, "str-bg-color-green": #556b2f, "med-bg-color-green": #2e8b57, "light-bg-color-green": #6b8e23, "font-control-color-green": #daf0afec, "font-blockquote-color-green": #6b8e23,
+"border-color-yellow": #ff8c00, "str-bg-color-yellow": #ffd700, "med-bg-color-yellow": #eb966c, "light-bg-color-yellow": #faf0e6, "font-control-color-yellow": #faf0e6, "font-blockquote-color-yellow": #eb966c,
+);
+
+
+@function get-color-from-basic($basic, $var-name) {
+    $color-name: #{$var-name}-#{$basic};
+    @return map.get($colors, $color-name);
+}
+
+@function get-rgba-from-html($color, $opacity: 1) {
+
+    @return rgba($color, $opacity);
+}
+
+@mixin set-color-set ($basic) {
+    $border-color: get-color-from-basic($basic, "border-color")!global;
+    $str-bg-color: get-color-from-basic($basic, "str-bg-color")!global;
+    $med-bg-color: get-color-from-basic($basic, "med-bg-color")!global;
+    $light-bg-color: get-color-from-basic($basic, "light-bg-color")!global;
+    $font-control-color: get-color-from-basic($basic, "font-control-color")!global;
+    $font-blockquote-color: get-color-from-basic($basic, "font-blockquote-color")!global;
+}
+
+
+@include set-color-set("blue");
+
+$border-style: 1px solid $border-color;
+$thick-border-style: 4px dotted $border-color;
+
+$text-xxl: 28px;
+$text-xl: 20px;
+$text-l: 16px;
+$text-m: 14px;
+$text-s: 12px;
+
+
+@mixin border-box-style {
+    border: $border-style;
+    border-radius: 25px;
+}
